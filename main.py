@@ -2,18 +2,23 @@ import sys
 import os
 from components import *
 
+os.system('cls||clear')
+
 logo()
 
-cmd = ""
+# ! Setup Command
+cmd = []
 if len(sys.argv) == 1:
-    cmd = input('How can I be of Service?:')
+    cmd.insert(0, input('How can I be of Service?:'))
+    cmd.insert(1, input('How can I be of Service?:'))
+    cmd.insert(2, input('How can I be of Service?:'))
+    print(cmd)
 else:
     cmd = sys.argv
+    cmd.pop(0)
 
-os.chdir('D:\Projects')
-os.chdir(cmd[2].capitalize())
+# All To Lower Case
+cmd = [name.lower() for name in cmd]
 
-if "new" in cmd:
-    cmd = input('How can I be of Service?:') #!To be continued
-else:
-    cmd = sys.argv
+# ? call new function
+new(cmd)

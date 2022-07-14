@@ -1,3 +1,6 @@
+import os
+from node import *
+
 def logo():
     print('''
  __  __          ____   _                           _          
@@ -10,11 +13,12 @@ Shelly | Version 1.5
     ''')
 
 
-def node(cmd):
-    app = ""
-    if cmd[2] == "react":
-        app = "pnpx create-react-app " + cmd[3]
-    elif cmd[2] == "next":
-        app = "pnpx create-next-app@latest " + cmd[3]
-    os.system(app)
-    os.system("code .")
+def new(cmd):
+    if cmd[1] in ["rt", "nxt"]:
+        node(cmd)
+    elif cmd[1] in ["pr", "ps", "ae", "lr", "xd"]:
+        print("Photoshop")
+    elif cmd[1] in "py":
+        print("Python")
+    elif cmd[1] in "go":
+        print("Go Lang")
