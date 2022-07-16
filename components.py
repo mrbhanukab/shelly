@@ -37,4 +37,4 @@ def Open(cmd):
     elif cmd[0] in "py":
         print("Python")
     elif cmd[0] in "go":
-        print("Go Lang")
+        print("Go Lan")
