@@ -1,8 +1,9 @@
 import sys
 import os
+import random
 
-os.chdir("C:/shelly/components")
-import components
+sys.path.insert(0, "C:/shelly/components")
+from components import *
 
 os.system('cls||clear')
 
@@ -10,8 +11,10 @@ logo()
 
 # ! Setup Command
 cmd = []
+text = ["How can I be of Service?", "Hi, How can I help you?", "Hey Bhanuka how can I help?", "I'm here, what can I do for You?"]
 if len(sys.argv) == 1:
-    cmd = list(input("How can I be of Service?: ").split())
+  text = random.choice(text) + " : "
+    cmd = list(input(text).split())
 else:
     cmd = sys.argv
     cmd.pop(0)
