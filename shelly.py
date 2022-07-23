@@ -1,6 +1,8 @@
 import sys
 import os
-from components import *
+
+os.chdir("C:/shelly/components")
+import components
 
 os.system('cls||clear')
 

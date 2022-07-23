@@ -28,12 +28,16 @@ def new(cmd):
 
 
 def Open(cmd):
-    directory = f"D:\Projects\{cmd[0]}\{cmd[1]}"
-    os.chdir(directory)
     if cmd[0] in ["react", "next"]:
+        directory = f"D:\Projects\{cmd[0]}\{cmd[1]}"
+        os.chdir(directory)
         os.system("code .")
     elif cmd[0] in ["pr", "ps", "ae", "lr", "xd"]:
         print("Photoshop")
+    elif cmd[0] in ["zoom"]:
+        os.chdir('C:\shelly\shortcuts')
+        app = f'Zoom.exe.lnk "-url=zoommtg://zoom.us/join?action=join&confno={cmd[1]}&pwd={cmd[2]}"'
+        os.system(app)
     elif cmd[0] in "py":
         print("Python")
     elif cmd[0] in "go":
