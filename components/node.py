@@ -12,6 +12,9 @@ def node(cmd):
       else:
         app = f"pnpx create-react-app@latest {cmd[2]}"
     elif cmd[1] == "next":
+        if "-npm" in cmd:
+        app = f"npx create-next-app@latest {cmd[2]}"
+      else:
         app = f"pnpx create-next-app@latest {cmd[2]}"
     os.system(app)
     os.chdir(cmd[2])
